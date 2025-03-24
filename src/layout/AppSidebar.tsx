@@ -297,9 +297,9 @@ const AppSidebar: React.FC = () => {
       className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 
         ${
           isExpanded || isMobileOpen
-            ? "w-[290px]"
+            ? "w-[250px]"
             : isHovered
-            ? "w-[290px]"
+            ? "w-[250px]"
             : "w-[90px]"
         }
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
@@ -315,12 +315,19 @@ const AppSidebar: React.FC = () => {
         <Link href="/">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
+            <div className="flex items-center gap-2">
             <Image
                 src="/images/logo/logoAgroInspection.png"
                 alt="Logo"
                 width={50}
                 height={10}
               />
+               {(isExpanded || isHovered || isMobileOpen) && (
+    <span className="text-2xl font-semibold text-gray-900 dark:text-white">
+      AGROIN.UZ
+    </span>
+  )}
+            </div>
               {/* <Image
                 className="dark:hidden"
                 src="/images/logo/logo.svg"
@@ -338,11 +345,11 @@ const AppSidebar: React.FC = () => {
             </>
           ) : (
             <Image
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            src="/images/logo/logoAgroInspection.png"
+            alt="Logo"
+            width={40}
+            height={10}
+          />
           )}
         </Link>
       </div>
